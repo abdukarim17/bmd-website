@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  @layer utilities {
+    .animate-scroll {
+      animation: scroll 40s linear infinite;
+    }
+    
+    /* Faster animation for mobile */
+    @media (max-width: 768px) {
+      .animate-scroll {
+        animation: scroll 20s linear infinite;
+      }
+    }
+    
+    .slide-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    .slide-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+  }
