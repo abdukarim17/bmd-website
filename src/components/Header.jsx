@@ -44,6 +44,7 @@ function Header() {
         ${visible ? 'translate-y-0' : '-translate-y-full'}
         ${isMenuOpen ? 'translate-y-0' : ''}`}
     >
+      
       {/* Logo/Brand */}
       <div className="text-xl font-bold transition-all duration-300">
         <h1>BMD mobile</h1>
@@ -166,21 +167,115 @@ function Header() {
               <div>
                 <p className="text-sm text-gray-600 font-medium">Call us at</p>
                 <a 
-                  href="tel:+18131234567" 
+                  href="tel:+16802020000" 
                   className="text-lg font-bold text-blue-500"
                 >
-                  (813) 123-4567
+                  (680) 202-0000
                 </a>
               </div>
             </div>
           </div>
 
           {/* Navigation Links */}
-          <a href="/" className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6">Home</a>
-          <a href="/services" className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6">Services & Prices</a>
-          <a href="/gallery" className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6">Gallery</a>
-          <a href="/faq" className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6">FAQ</a>
-          <a href="/contact" className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6">Contact Us</a>
+          <a 
+            href="#home" 
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('home');
+              const headerOffset = 80;
+              const elementPosition = section.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+              setIsMenuOpen(false);
+            }}
+            className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6"
+          >
+            Home
+          </a>
+          
+          <a 
+            href="#services" 
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('services');
+              const headerOffset = 80;
+              const elementPosition = section.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+              setIsMenuOpen(false);
+            }}
+            className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6"
+          >
+            Services & Prices
+          </a>
+          
+          <a 
+            href="#gallery" 
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('gallery');
+              const headerOffset = 80;
+              const elementPosition = section.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+              setIsMenuOpen(false);
+            }}
+            className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6"
+          >
+            Gallery
+          </a>
+          
+          <a 
+            href="#faq" 
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('faq');
+              const headerOffset = 80;
+              const elementPosition = section.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+              setIsMenuOpen(false);
+            }}
+            className="py-2 px-4 hover:bg-gray-100 transition-all duration-300 ease-in-out hover:pl-6"
+          >
+            FAQ
+          </a>
+          
+          <a 
+            href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('contact');
+              const headerOffset = 80;
+              const elementPosition = section.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+              setIsMenuOpen(false);
+            }}
+            className="py-2 px-4 transition-all duration-300 ease-in-out "
+          >
+            Contact Us
+          </a>
           
           <a 
             href="https://app.squareup.com/appointments/book/cxwgrre1ay0zyn/LZHX6SQFX8Y97/start"

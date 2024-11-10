@@ -130,20 +130,37 @@ function App() {
       <Header />
       {/* Hero Section */}
       <section 
+        
         id="home"
-        className='min-h-[65vh] relative flex justify-center items-center px-6 md:px-20 py-12 md:py-20'
+        className='min-h-[85vh] md:min-h-[65vh] relative flex flex-col justify-center items-center px-6 md:px-20 py-16 md:py-20 overflow-hidden'
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${mainpage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${mainpage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
-        <div className='max-w-2xl relative z-10'>
-          <p className='shadow-md bg-gray-500 bg-opacity-75 text-white w-fit pb-1 pt-1 pl-3 pr-3 rounded-xl mb-3 text-sm md:text-base'>
-            Proudly serving Tampa and surrounding areas
-          </p>
-          <h1 className='text-2xl md:text-4xl font-bold mb-4 text-white'>
+        {/* Animated overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        
+        {/* Content container */}
+        <div className='max-w-2xl relative z-10 text-center md:text-left'>
+          {/* Location badge */}
+          <div className='flex justify-center md:justify-start mb-6 animate-fade-in-up' style={{ animationDelay: '0.3s' }}>
+            <div className='flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full py-2 px-4 shadow-lg'>
+              <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <p className='text-white text-sm md:text-base font-medium'>
+                Tampa & Surrounding Areas
+              </p>
+            </div>
+          </div>
+
+          {/* Main heading */}
+          <h1 className='text-3xl md:text-5xl font-bold mb-6 text-white leading-tight'>
             {'Restore. Renew. Rejoice'.split(' ').map((word, index) => (
               <span
                 key={`${word}-${replay}`}
@@ -151,22 +168,64 @@ function App() {
                 style={{ 
                   animationDelay: `${index * 0.15}s`,
                   display: 'inline-block',
-                  marginRight: '0.3em'
+                  marginRight: '0.3em',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                 }}
               >
                 {word}
               </span>
             ))}
           </h1>
-          <p className='text-gray-100 text-sm md:text-base mb-6'>
-            We offer top-tier, professional vehicle cleaning and detailing, ensuring your car looks as good as new.
+
+          {/* Description */}
+          <p className='text-gray-200 text-base md:text-lg mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 animate-fade-in-up' 
+             style={{ animationDelay: '0.6s' }}>
+            Experience premium auto detailing that transforms your vehicle. 
+            Professional care that goes beyond clean – we deliver excellence in every detail.
           </p>
-          <a 
-            href='https://app.squareup.com/appointments/book/cxwgrre1ay0zyn/LZHX6SQFX8Y97/start' 
-            className="cursor-pointer inline-block w-full md:w-48 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center px-6 py-2 rounded-md hover:bg-blue-700 transition-all duration-500 ease-in-out hover:scale-105 shadow-lg"
-          >
-            Book Appointment
-          </a>
+
+          {/* CTA Buttons */}
+          <div className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up'
+               style={{ animationDelay: '0.9s' }}>
+            <a 
+              href='https://app.squareup.com/appointments/book/cxwgrre1ay0zyn/LZHX6SQFX8Y97/start' 
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-3 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <span className="relative z-10 font-medium">Book Appointment</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </a>
+            
+            <a 
+              href="#services" 
+              className="group relative overflow-hidden rounded-full bg-white/10 backdrop-blur-md px-8 py-3 text-white border border-white/20 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-white/20"
+            >
+              <span className="relative z-10 font-medium">View Services</span>
+            </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-12 flex flex-wrap justify-center md:justify-start gap-6 animate-fade-in-up"
+               style={{ animationDelay: '1.2s' }}>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span className="text-white text-sm">5.0 Rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-white text-sm">100% Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </section>
 
@@ -240,52 +299,91 @@ function App() {
                 </div>
               </div>
 
-              <div className='cursor-pointer bg-white hover:bg-gray-50 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105'>
+              <div className='cursor-pointer bg-gradient-to-br from-white to-blue-50 hover:to-blue-100 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105 border border-blue-100 hover:border-blue-300 group'>
                 <div className='space-y-4'>
-                  <h3 className='text-center text-xl font-bold text-gray-800'>Full Interior Detailing</h3>
-                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px]'>
+                  <div className="relative">
+                    <h3 className='text-center text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300'>
+                      Full Interior Detailing
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
+                    </h3>
+                  </div>
+                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
                     Restore your vehicle's interior to pristine condition with our Full Interior Detailing service. Deep cleaning, vacuuming, upholstery care, and more for a refreshed, like-new interior experience.
                   </p>
-                  <div className='pt-4 border-t border-gray-100'>
-                    <p className='text-2xl font-bold text-blue-500'>$249.99</p>
-                    <p className='text-sm text-gray-500'>Sedan | 3hrs</p>
-                    <div className='space-y-1 mt-2'>
-                      <p className='text-sm text-gray-600'>+ $20 SUV</p>
-                      <p className='text-sm text-gray-600'>+ $50 Truck</p>
+                  <div className='pt-4 border-t border-gray-200'>
+                    <div className="flex justify-between items-baseline mb-2">
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
+                      <p className='text-sm text-gray-500 font-medium'>Sedan | 3hrs</p>
+                    </div>
+                    <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>SUV</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
+                      </p>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>Truck</span>
+                        <span className='font-medium text-blue-500'>+$50</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className='cursor-pointer bg-white hover:bg-gray-50 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105'>
+              <div className='cursor-pointer bg-gradient-to-br from-white to-blue-50 hover:to-blue-100 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105 border border-blue-100 hover:border-blue-300 group'>
                 <div className='space-y-4'>
-                  <h3 className='text-center text-xl font-bold text-gray-800'>Full Exterior Detailing</h3>
-                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px]'>
+                  <div className="relative">
+                    <h3 className='text-center text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300'>
+                      Full Exterior Detailing
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
+                    </h3>
+                  </div>
+                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
                     Revitalize your vehicle's exterior with our Full Exterior Detailing service. We provide expert washing, thorough cleaning, and meticulous attention to detail, ensuring a sleek, showroom-worthy finish.
                   </p>
-                  <div className='pt-4 border-t border-gray-100'>
-                    <p className='text-2xl font-bold text-blue-500'>$249.99</p>
-                    <p className='text-sm text-gray-500'>Sedan | 3hrs</p>
-                    <div className='space-y-1 mt-2'>
-                      <p className='text-sm text-gray-600'>+ $20 SUV</p>
-                      <p className='text-sm text-gray-600'>+ $50 Truck</p>
+                  <div className='pt-4 border-t border-gray-200'>
+                    <div className="flex justify-between items-baseline mb-2">
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
+                      <p className='text-sm text-gray-500 font-medium'>Sedan | 3hrs</p>
+                    </div>
+                    <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>SUV</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
+                      </p>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>Truck</span>
+                        <span className='font-medium text-blue-500'>+$50</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className='cursor-pointer bg-white hover:bg-gray-50 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105'>
+              <div className='cursor-pointer bg-gradient-to-br from-white to-blue-50 hover:to-blue-100 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:scale-105 border border-blue-100 hover:border-blue-300 group'>
                 <div className='space-y-4'>
-                  <h3 className='text-center text-xl font-bold text-gray-800'>Basic Wash</h3>
-                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px]'>
+                  <div className="relative">
+                    <h3 className='text-center text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300'>
+                      Basic Wash
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
+                    </h3>
+                  </div>
+                  <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
                     A thorough and effective service designed to maintain your vehicle's cleanliness and shine, covering all the essentials for regular upkeep and care. Drive with pride!
                   </p>
-                  <div className='pt-4 border-t border-gray-100'>
-                    <p className='text-2xl font-bold text-blue-500'>$249.99</p>
-                    <p className='text-sm text-gray-500'>Sedan | 1hr</p>
-                    <div className='space-y-1 mt-2'>
-                      <p className='text-sm text-gray-600'>+ $20 SUV</p>
-                      <p className='text-sm text-gray-600'>+ $50 Truck</p>
+                  <div className='pt-4 border-t border-gray-200'>
+                    <div className="flex justify-between items-baseline mb-2">
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
+                      <p className='text-sm text-gray-500 font-medium'>Sedan | 1hr</p>
+                    </div>
+                    <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>SUV</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
+                      </p>
+                      <p className='text-sm text-gray-600 flex justify-between items-center'>
+                        <span>Truck</span>
+                        <span className='font-medium text-blue-500'>+$50</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -296,46 +394,95 @@ function App() {
       {/* Photo Slider Section */}
       <section 
         id="gallery"
-        className='py-16 md:py-24 px-6 md:px-20 bg-gray-50'>
-        <div className='max-w-4xl mx-auto mb-12 text-center'>
+        className='py-16 md:py-24 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-white'
+      >
+        <div className='max-w-4xl mx-auto mb-12 text-center space-y-4'>
           <p className='text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base'>
             Our Work
           </p>
-          <h2 className='text-xl md:text-3xl font-bold mt-2'>
+          <h2 className='text-2xl md:text-4xl font-bold mt-2 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent'>
             Explore Automotive Excellence in Action
           </h2>
+          <p className='text-gray-600 max-w-2xl mx-auto'>
+            Witness the transformation as we bring vehicles back to their showroom glory. Each image tells a story of dedication to detail and automotive perfection.
+          </p>
         </div>
         
         <div className='max-w-7xl mx-auto overflow-hidden relative'>
+          {/* Left Arrow */}
+          <button 
+            onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? imageUrls.length - 1 : prev - 1))}
+            className='absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group'
+          >
+            <svg className="w-6 h-6 text-gray-800 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
           <div className='flex justify-center'>
-            <div className='w-[90vw] h-[90vw] md:w-[800px] md:h-[700px] relative'>
+            <div className='w-[90vw] h-[90vw] md:w-[800px] md:h-[700px] relative group'>
               <img 
                 key={currentImageIndex}
                 src={imageUrls[currentImageIndex]} 
                 alt={`Detailed car ${currentImageIndex + 1}`} 
-                className='w-full h-full object-cover rounded-lg shadow-lg slide-in'
+                className='w-full h-full object-cover rounded-2xl shadow-xl slide-in transition-transform duration-500 group-hover:scale-[1.02]'
               />
+              {/* Image Overlay */}
+              <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl'></div>
             </div>
           </div>
+
+          {/* Right Arrow */}
+          <button 
+            onClick={() => setCurrentImageIndex((prev) => (prev === imageUrls.length - 1 ? 0 : prev + 1))}
+            className='absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group'
+          >
+            <svg className="w-6 h-6 text-gray-800 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           
           {/* Navigation dots */}
-          <div className='flex justify-center mt-6 gap-3'>
+          <div className='flex justify-center mt-6 gap-2'>
             {imageUrls.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-3 h-1 rounded-full transition-all duration-300 ${
-                  index === currentImageIndex ? 'bg-blue-500 scale-125' : 'bg-gray-300'
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex 
+                    ? 'bg-blue-500 w-4' 
+                    : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
+
+        {/* Instagram Link */}
+        <div className='mt-12 text-center'>
+          <a 
+            href="https://www.instagram.com/bmddetailing_fl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 group'
+          >
+            <span>See More on Instagram</span>
+            <svg 
+              className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" 
+              fill="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+
+        
       </section>
       <section 
         id="faq"
-        className="py-16 md:py-24 px-6 md:px-20 bg-gray-50">
+        className="py-16 md:py-24 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">
@@ -376,7 +523,7 @@ function App() {
 
       <section 
         id="contact"
-        className="py-16 md:py-24 px-6 md:px-20 bg-gray-50">
+        className="py-16 md:py-24 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">
@@ -401,7 +548,7 @@ function App() {
                   }`}
                   style={{ position: index === currentReviewIndex ? 'relative' : 'absolute' }}
                 >
-                  <div className="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-700 hover:shadow-xl">
+                  <div className="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-700 hover:shadow-xl border border-gray-200">
                     <div className="flex justify-center mb-4 animate-fade-in">
                       {[...Array(review.rating)].map((_, i) => (
                         <svg
@@ -514,7 +661,7 @@ function App() {
 
           {/* Right Side - Booking Form */}
           <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <form className="space-y-6">
+            <form className="space-y-6" action='https://app.squareup.com/appointments/book/cxwgrre1ay0zyn/LZHX6SQFX8Y97/start'>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                 <input
@@ -574,7 +721,7 @@ function App() {
           <div className="flex items-center gap-6">
             {/* Instagram */}
             <a 
-              href="https://instagram.com/your-handle" 
+              href="https://www.instagram.com/bmddetailing_fl/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-300"
