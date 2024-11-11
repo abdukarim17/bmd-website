@@ -270,7 +270,7 @@ function App() {
                   </h3>
                   
                   <p className='text-gray-600 text-sm leading-relaxed min-h-[80px]'>
-                    Elevate your vehicle's allure with our combo Diamond Interior & Exterior Detailing service. Impeccable cleaning, meticulous detailing, and premium treatments ensure a stunning finish inside and out.
+                    Your car deserves the best, and that's exactly what we offer with our Ultimate Detail Package. It’s more than just a cleaning — it’s an experience that restores your vehicle to its showroom shine.
                   </p>
                   
                   <div className='pt-4 border-t border-gray-100'>
@@ -308,21 +308,24 @@ function App() {
                     </h3>
                   </div>
                   <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
-                    Restore your vehicle's interior to pristine condition with our Full Interior Detailing service. Deep cleaning, vacuuming, upholstery care, and more for a refreshed, like-new interior experience.
+                  Deep clean for upholstery, carpets, and mats
+Freshen up every surface with expert care
+A healthier, more comfortable driving environment
+Book your Interior Detail today and make every drive feel like a luxury experience! ✨
                   </p>
                   <div className='pt-4 border-t border-gray-200'>
                     <div className="flex justify-between items-baseline mb-2">
-                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$164.99</p>
                       <p className='text-sm text-gray-500 font-medium'>Sedan | 3hrs</p>
                     </div>
                     <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>SUV</span>
-                        <span className='font-medium text-blue-500'>+$20</span>
+                        <span className='font-medium text-blue-500'>+$15</span>
                       </p>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>Truck</span>
-                        <span className='font-medium text-blue-500'>+$50</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
                       </p>
                     </div>
                   </div>
@@ -338,11 +341,14 @@ function App() {
                     </h3>
                   </div>
                   <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
-                    Revitalize your vehicle's exterior with our Full Exterior Detailing service. We provide expert washing, thorough cleaning, and meticulous attention to detail, ensuring a sleek, showroom-worthy finish.
+                  Hand wash & deep clean
+Tire Shining
+Long-lasting wax protection for a smooth, glossy finish
+Book now and give your car the shine it deserves! 🌟
                   </p>
                   <div className='pt-4 border-t border-gray-200'>
                     <div className="flex justify-between items-baseline mb-2">
-                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$144.99</p>
                       <p className='text-sm text-gray-500 font-medium'>Sedan | 3hrs</p>
                     </div>
                     <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
@@ -368,21 +374,25 @@ function App() {
                     </h3>
                   </div>
                   <p className='text-gray-600 text-sm leading-relaxed min-h-[80px] group-hover:text-gray-700 transition-colors duration-300'>
-                    A thorough and effective service designed to maintain your vehicle's cleanliness and shine, covering all the essentials for regular upkeep and care. Drive with pride!
+                  Exterior wash and rinse
+Tire shine
+Quick interior wipe-down
+Perfect for a fast refresh! Book your Basic Wash today and hit the road with a clean car! 🌟
                   </p>
                   <div className='pt-4 border-t border-gray-200'>
                     <div className="flex justify-between items-baseline mb-2">
-                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$249.99</p>
-                      <p className='text-sm text-gray-500 font-medium'>Sedan | 1hr</p>
+                      <p className='text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>$134.99
+                      </p>
+                      <p className='text-sm text-gray-500 font-medium'>Sedan | 1.5hr</p>
                     </div>
                     <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>SUV</span>
-                        <span className='font-medium text-blue-500'>+$20</span>
+                        <span className='font-medium text-blue-500'>+$10</span>
                       </p>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>Truck</span>
-                        <span className='font-medium text-blue-500'>+$50</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
                       </p>
                     </div>
                   </div>
@@ -482,7 +492,7 @@ function App() {
       </section>
       <section 
         id="faq"
-        className="py-16 md:py-24 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-white">
+        className="py-16 md:py-24 px-6 md:px-20 bg-gray">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">
@@ -523,7 +533,7 @@ function App() {
 
       <section 
         id="contact"
-        className="py-16 md:py-24 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-white">
+        className="py-16 md:py-24 px-6 md:px-20 bg-gray">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">
@@ -597,7 +607,7 @@ function App() {
 
       <section 
         id="contact"
-        className="py-16 md:py-24 px-6 md:px-20 bg-gray-50">
+        className="py-16 md:py-24 px-6 md:px-20 bg-gray">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Contact Info */}
           <div className="space-y-8">
