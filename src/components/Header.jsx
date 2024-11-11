@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -47,7 +48,8 @@ function Header() {
       
       {/* Logo/Brand */}
       <div className="text-xl font-bold transition-all duration-300">
-        <h1>BMD mobile</h1>
+        <h1>BMD Mobile</h1>
+        <p className='text-sm font-light from-neutral-500 '>detailing</p>
       </div>
 
       {/* Desktop Navigation */}
