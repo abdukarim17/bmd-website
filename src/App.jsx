@@ -354,11 +354,11 @@ Book now and give your car the shine it deserves! 🌟
                     <div className='space-y-2 mt-3 bg-white/80 p-3 rounded-lg border border-blue-100'>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>SUV</span>
-                        <span className='font-medium text-blue-500'>+$20</span>
+                        <span className='font-medium text-blue-500'>+$10</span>
                       </p>
                       <p className='text-sm text-gray-600 flex justify-between items-center'>
                         <span>Truck</span>
-                        <span className='font-medium text-blue-500'>+$50</span>
+                        <span className='font-medium text-blue-500'>+$20</span>
                       </p>
                     </div>
                   </div>

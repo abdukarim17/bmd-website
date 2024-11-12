@@ -45,10 +45,11 @@ function Header() {
         ${visible ? 'translate-y-0' : '-translate-y-full'}
         ${isMenuOpen ? 'translate-y-0' : ''}`}
     >
+
       
       {/* Logo/Brand */}
       <div className="text-xl font-bold transition-all duration-300">
-        <h1>BMD Mobile</h1>
+        <h1>BMD <span className='text-blue-500'>Mobile</span></h1>
         <p className='text-sm font-light from-neutral-500 '>detailing</p>
       </div>
 
