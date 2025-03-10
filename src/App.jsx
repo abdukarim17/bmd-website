@@ -631,7 +631,7 @@ Perfect for a fast refresh! Book your Basic Wash today and hit the road with a c
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Phone</h3>
-                    <p className="text-gray-600">+1 (680) 202-0000</p>
+                    <p className="text-gray-600">+1 (813) 560-7628</p>
                   </div>
                 </div>
               </div>
